@@ -3,7 +3,7 @@
               | MERN-BLOG |
 ----------------------------------------- */
 import express from "express";
-import { signup, signin, google } from "../controllers/auth.controller.js";
+import { google, signin, signup } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 
