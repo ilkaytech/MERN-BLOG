@@ -20,10 +20,10 @@ export default function SignIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
-      return dispatch(signInFailure("Please fill out all fields."));
+      return dispatch(signInFailure("Please fill all the fields"));
     }
     try {
-      dispatch(signInStart);
+      dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -33,6 +33,7 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
+
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/");
@@ -58,6 +59,7 @@ export default function SignIn() {
           </p>
         </div>
         {/* right */}
+
         <div className="flex-1">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
@@ -73,7 +75,7 @@ export default function SignIn() {
               <Label value="Your password" />
               <TextInput
                 type="password"
-                placeholder="********"
+                placeholder="**********"
                 id="password"
                 onChange={handleChange}
               />
@@ -95,7 +97,7 @@ export default function SignIn() {
             <OAuth />
           </form>
           <div className="flex gap-2 text-sm mt-5">
-            <span>Don't have an account?</span>
+            <span>Dont Have an account?</span>
             <Link to="/sign-up" className="text-blue-500">
               Sign Up
             </Link>
