@@ -11,6 +11,10 @@
 
 ![blog](./blog1.png)
 
+### Dashboard:
+
+![blog](./dashboard.png)
+
 ### Sign-In:
 
 ![sign-in](./sign-in.png)
